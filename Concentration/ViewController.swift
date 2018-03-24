@@ -17,11 +17,26 @@ class ViewController: UIViewController {
         }
     }
     
+    //array of card buttons
+    @IBOutlet var cardButtons: [UIButton]!
+    
+    var emjiChoices = ["🙉","🐔","🙉","🐔","🦄","🦄","🐳","🐳"]
+    
     @IBOutlet weak var flipCountLabel: UILabel!
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
-        flipCard(withEmoji: "🦉", on: sender)
+        if let cardNumber = cardButtons.index(of: sender) {
+            flipCard(withEmoji: emjiChoices[cardNumber], on: sender)
+            
+        } else {
+            
+            print("That card is not found")
+            
+        }
+        
+        
+        
     }
     
     

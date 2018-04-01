@@ -12,6 +12,8 @@
 		84DE81AE20312211008CFBCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE81AC20312211008CFBCA /* Main.storyboard */; };
 		84DE81B020312211008CFBCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DE81AF20312211008CFBCA /* Assets.xcassets */; };
 		84DE81B320312211008CFBCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE81B120312211008CFBCA /* LaunchScreen.storyboard */; };
+		9C3587B7207197D3003DC3ED /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3587B5207197D2003DC3ED /* Card.swift */; };
+		9C3587B8207197D3003DC3ED /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3587B6207197D2003DC3ED /* Concentration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		84DE81AF20312211008CFBCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84DE81B220312211008CFBCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DE81B420312211008CFBCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3587B5207197D2003DC3ED /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		9C3587B6207197D2003DC3ED /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		84DE81A720312211008CFBCA /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				9C3587B5207197D2003DC3ED /* Card.swift */,
+				9C3587B6207197D2003DC3ED /* Concentration.swift */,
 				84DE81BA203124DD008CFBCA /* Supporting Files */,
 				84DE81AA20312211008CFBCA /* ViewController.swift */,
 				84DE81AC20312211008CFBCA /* Main.storyboard */,
@@ -145,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DE81AB20312211008CFBCA /* ViewController.swift in Sources */,
+				9C3587B8207197D3003DC3ED /* Concentration.swift in Sources */,
+				9C3587B7207197D3003DC3ED /* Card.swift in Sources */,
 				84DE81A920312211008CFBCA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

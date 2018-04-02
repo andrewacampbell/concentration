@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //NB: in swift you have to completely initialize something before you can use it.
+    lazy var game = Concentration(numberOfPairOfCards: (cardButtons.count + 1) / 2)
+    
     var flipCount = 0 {
         //Property observer - everytime the property changes, didset is executed
         didSet {
@@ -27,7 +30,8 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
-            flipCard(withEmoji: emjiChoices[cardNumber], on: sender)
+            game.ChooseCard(at: cardNumber)
+            upDateViewFromModel()
             
         } else {
             
@@ -37,15 +41,22 @@ class ViewController: UIViewController {
         
     }
     
-    
-    func flipCard(withEmoji emoji: String, on button: UIButton) {
-        if button.currentTitle == emoji {
-            button.setTitle("", for: UIControlState.normal)
-            button.backgroundColor = #colorLiteral(red: 1, green: 0.6944040282, blue: 0.3931561304, alpha: 1)
-        } else {
-            button.setTitle(emoji, for: UIControlState.normal)
-            button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    func upDateViewFromModel() {
+        for index in cardButtons.indices {
+            let button = cardButtons[index]
+            let card = game.cards[index]
+            if card.isFaceup {
+                button.setTitle(emoji(for: card), for: UIControlState.normal)
+                button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            } else {
+                button.setTitle("", for: UIControlState.normal)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.6944040282, blue: 0.3931561304, alpha: 0) : #colorLiteral(red: 1, green: 0.6944040282, blue: 0.3931561304, alpha: 1)
+            }
         }
+    }
+    
+    func emoji(for card: Card) -> String {
+        return "A"
     }
     
 }

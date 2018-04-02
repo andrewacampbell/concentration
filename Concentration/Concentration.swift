@@ -14,7 +14,11 @@ class Concentration {
     var cards = [Card]()
     
     func ChooseCard (at index: Int) {
-        
+        if cards[index].isFaceup {
+            cards[index].isFaceup = false
+        } else {
+            cards[index].isFaceup = true
+        }
     }
     
     

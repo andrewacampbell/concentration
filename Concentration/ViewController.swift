@@ -23,8 +23,6 @@ class ViewController: UIViewController {
     //array of card buttons
     @IBOutlet var cardButtons: [UIButton]!
     
-    var emjiChoices = ["🙉","🐔","🙉","🐔","🦄","🦄","🐳","🐳"]
-    
     @IBOutlet weak var flipCountLabel: UILabel!
     
     @IBAction func touchCard(_ sender: UIButton) {
@@ -55,10 +53,51 @@ class ViewController: UIViewController {
         }
     }
     
+    var emojiChoices = ["🐔","🙉","🦄","🐳","🐅","🐸","🐥","🐙","🐝"]
+    // Define a Dictionary
+    var emojii = [Int:String]()
+    
+    // Do some validations checks and put emoji in dictionary.
     func emoji(for card: Card) -> String {
-        return "A"
+        
+        if emojii[card.identifier] == nil, emojiChoices.count > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
+            emojii[card.identifier] = emojiChoices.remove(at: randomIndex)
+        }
+        
+        return emojii[card.identifier] ?? "?"
+        
     }
     
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

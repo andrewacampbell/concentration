@@ -19,7 +19,7 @@ class Concentration {
         } else {
             cards[index].isFaceup = true
         }
-    }
+    } 
     
     
     init(numberOfPairOfCards: Int) {

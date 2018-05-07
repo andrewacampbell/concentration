@@ -17,9 +17,9 @@ struct Card
     
     // Static are for the type, not the card,
     // but the type of card.
-    static var identifierFactory = 0
+    private static var identifierFactory = 0
     
-    static func getUniqueIdentifier() -> Int {
+    private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
     }

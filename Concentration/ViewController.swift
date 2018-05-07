@@ -11,7 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     //NB: in swift you have to completely initialize something before you can use it.
-    lazy var game = Concentration(numberOfPairOfCards: (cardButtons.count + 1) / 2)
+    lazy var game = Concentration(numberOfPairOfCards: ( numberOfPairsOfCards))
+    
+    
+    // Computed property - get only
+    var numberOfPairsOfCards: Int {
+        return (cardButtons.count + 1 ) / 2
+    }
     
     var flipCount = 0 {
         //Property observer - everytime the property changes, didset is executed
@@ -34,9 +40,7 @@ class ViewController: UIViewController {
         } else {
             
             print("That card is not found")
-            
         }
-        
     }
     
     func upDateViewFromModel() {
@@ -64,40 +68,9 @@ class ViewController: UIViewController {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
             emojii[card.identifier] = emojiChoices.remove(at: randomIndex)
         }
-        
         return emojii[card.identifier] ?? "?"
-        
     }
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
